@@ -61,30 +61,30 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><a className='font-bold text-xl'>Home</a></li>
                         <li>
-                            <details>
-                                <summary className='font-bold text-xl'>Shop</summary>
+                            <details className="relative z-20">
+                                <summary className='font-bold text-xl '>Shop</summary>
                                 <ul className="p-2">
-                                    <li><a>Cruiser Bikes</a></li>
-                                    <li><a>Road Bikes</a></li>
-                                    <li><a>Mountain Bikes</a></li>
-                                    <li><a>Hybrid Bikes</a></li>
-                                    <li><a>Gravel Bikes</a></li>
-                                    <li><a>Dirt Bikes</a></li>
-                                    <li><a>Scooter</a></li>
-                                    <li><a>Adventure Bikes</a></li>
-                                    <li><a>Chopper Bikes</a></li>
+                                    <li><a className='text-nowrap'>Cruiser Bikes</a></li>
+                                    <li><a className='text-nowrap'>Road Bikes</a></li>
+                                    <li><a className='text-nowrap'>Mountain Bikes</a></li>
+                                    <li><a className='text-nowrap'>Hybrid Bikes</a></li>
+                                    <li><a className='text-nowrap'>Gravel Bikes</a></li>
+                                    <li><a className='text-nowrap'>Dirt Bikes</a></li>
+                                    <li><a className='text-nowrap'>Scooter</a></li>
+                                    <li><a className='text-nowrap'>Adventure Bikes</a></li>
+                                    <li><a className='text-nowrap'>Chopper Bikes</a></li>
                                 </ul>
 
                             </details>
                         </li>
                         <li>
-                            <details>
+                            <details className="relative z-20">
                                 <summary className='font-bold text-xl'>Services</summary>
                                 <ul className="p-2 ">
-                                    <li><a>Cleaning and Lubrication</a></li>
-                                    <li><a>Chain Maintenance</a></li>
-                                    <li><a>Tire Inflation and Valve Checks</a></li>
-                                    <li><a>Brake Adjustments</a></li>
+                                    <li><a className='text-nowrap'>Cleaning and Lubrication</a></li>
+                                    <li><a className='text-nowrap'>Chain Maintenance</a></li>
+                                    <li><a className='text-nowrap'>Tire Inflation and Valve Checks</a></li>
+                                    <li><a className='text-nowrap'>Brake Adjustments</a></li>
                                 </ul>
 
                             </details>

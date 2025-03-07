@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
   }, [isInView])
 
   return (
-    <div className="container mx-auto flex gap-3 m-4">
+    <div className="container mx-auto flex gap-3 m-4 p-3">
       <div className="w-full sm:w-1/2 p-2">
         <Image
           src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU52Vh-97VI-6ExRP8Fz9xpgssRR6iWWgdTQ&s'
