@@ -53,8 +53,8 @@ const Navbar = () => {
                             <li><a className='font-bold text-xl'>Contact Us</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">
-                        <Image src='https://www.shutterstock.com/image-vector/bike-badge-vector-logo-600nw-1142801678.jpg' alt='logo' width={150} height={10} className='p-2' data-aos='zoom-in' />
+                    <a>
+                        <Image src='https://www.shutterstock.com/image-vector/bike-badge-vector-logo-600nw-1142801678.jpg' alt='logo' width={80} height={8} data-aos='zoom-in' />
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">

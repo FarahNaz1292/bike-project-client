@@ -1,6 +1,6 @@
 
 import HeroSection from "@/Components /HomePage/HeroSection";
-import Products from "@/Components /HomePage/Products";
+import Products from "@/Components /Products/Products";
 
 import ServiceSection from "@/Components /HomePage/ServiceSection";
 import WhyChooseUs from "@/Components /HomePage/WhyChooseUs";

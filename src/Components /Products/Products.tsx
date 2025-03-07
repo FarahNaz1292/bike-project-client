@@ -1,6 +1,7 @@
 'use client'
 
 import { BikeInfo } from '@/types/productTypes'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import StarRatings from 'react-star-ratings'
 
@@ -64,9 +65,11 @@ const Products = () => {
                 starDimension="20px"
                 starSpacing="2px"
               />
-              <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+             <Link href={'product/id'}>
+             <div className="card-actions">
+                <button className="btn btn-primary">More Details</button>
               </div>
+             </Link>
             </div>
           </div>
         ))}
