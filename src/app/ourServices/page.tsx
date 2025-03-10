@@ -1,10 +1,17 @@
 import ShopServices from '@/Components /ShopServices/ShopServices'
 import React from 'react'
 
-const page = () => {
+const shopServices =  async({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) => {
+
+  const { id } = await params
+  console.log(id);
   return (
    <ShopServices/>
   )
 }
 
-export default page
+export default shopServices

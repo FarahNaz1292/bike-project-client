@@ -20,7 +20,7 @@ const SingleProductPage = () => {
       if (!id) return // Ensure ID exists before making the request
 
       try {
-        const response = await axios.get(`http://localhost:5001/products/673cf8e24306d8fe8d9ebdc1`)
+        const response = await axios.get(`http://localhost:5001/products/${id}`)
         console.log("Product ID from useParams:", id);
 
         console.log("Fetched product:", response.data) // Debugging log

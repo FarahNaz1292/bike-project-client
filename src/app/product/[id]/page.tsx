@@ -11,7 +11,6 @@ const product = async({
 
   const { id } = await params
   console.log(id);
-  
   return (
   <SingleProductPage />
   )
