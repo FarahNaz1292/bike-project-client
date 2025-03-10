@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useState } from "react"
 import CountUp from 'react-countup'
 
@@ -82,7 +83,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
       <div className="mt-4">
-      <button className="btn btn-primary">Book you service now </button>
+    <Link href={'/ourservices'}>  <button className="btn btn-primary">Book you service now </button></Link>
       </div>
       </div>
     </div>

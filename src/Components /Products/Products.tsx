@@ -29,10 +29,10 @@ const Products = () => {
   }, [])
 
   const handleShowAllClick = () => {
-    setShowAll(!showAll) // Toggle the state to show all products or limited products
+    setShowAll(!showAll) 
   }
 
-  const displayedProducts = showAll ? products : products.slice(0, 9) // Display all or only first 10 products
+  const displayedProducts = showAll ? products : products.slice(0, 9)
 
   return (
     <>

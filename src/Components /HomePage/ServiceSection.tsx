@@ -2,6 +2,7 @@
 
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 const ServiceSection = () => {
@@ -104,7 +105,7 @@ const ServiceSection = () => {
 
             </div>
             <div className='flex justify-center items-center m-4'>
-            <button className='btn btn-primary font-bold text-lg'>Services Details</button>
+         <Link href={'/ourservices'}>   <button className='btn btn-primary font-bold text-lg'>Services Details</button></Link>
             </div>
 
 

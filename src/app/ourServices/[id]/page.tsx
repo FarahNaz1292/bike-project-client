@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ourServices = () => {
+const singleservicesPage = () => {
   return (
-    <div>ourServices </div>
+    <div>singleservicesPage</div>
   )
 }
 
-export default ourServices
+export default singleservicesPage
