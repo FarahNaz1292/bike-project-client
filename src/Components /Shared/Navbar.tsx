@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import 'aos/dist/aos.css';
 import React from 'react';
+import Link from 'next/link';
 
 
 if (typeof window !== 'undefined') {
@@ -26,7 +27,7 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
+                          <Link href={''}>  <li><a>Home</a></li></Link>
                             <li><a>Shop</a>
                                 <ul className="p-2">
                                     <li><a>Cruiser Bikes</a></li>

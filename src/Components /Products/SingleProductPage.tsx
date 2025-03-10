@@ -43,26 +43,6 @@ const SingleProductPage = () => {
       </div>
 
       {singleProduct ? (
-        
-        // <div className=' container mx-auto flex justify-center items-center'>
-        //   <div >
-        //     <Image src={singleProduct.imageURL} alt={singleProduct.title} width={500} height={64} className="object-cover" />
-        //   </div>
-
-        //   <div className='text-center'>
-        //     <h2 className='text-2xl font-extrabold'>{singleProduct.title}</h2>
-        //     <p className='text-xl font-bold'>Price ${singleProduct.price}</p>
-        //     <StarRatings
-        //       rating={singleProduct.rating}
-        //       starRatedColor="#fbbf24"
-        //       numberOfStars={5}
-        //       name='rating'
-        //       starDimension="20px"
-        //       starSpacing="2px"
-        //     />
-        //     <p className='text-lg'>{singleProduct.description}</p>
-        //   </div>
-        // </div>
         <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
         <div >
@@ -82,7 +62,9 @@ const SingleProductPage = () => {
             <p className="py-6">
            {singleProduct.description}
             </p>
-            <button className="btn btn-primary"> Click Here To Buy</button>
+         <Link href={''}>
+         <button className="btn btn-primary"> Click Here To Buy</button>
+         </Link>
           </div>
         </div>
       </div>

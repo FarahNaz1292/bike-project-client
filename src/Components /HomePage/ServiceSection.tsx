@@ -11,12 +11,12 @@ const ServiceSection = () => {
     }
     return (
         <>
-              <div className='container mx-auto flex flex-col justify-center items-center mt-4 mb-4'>
-                    <h1 className='text-2xl font-extrabold'>Our Services</h1>
-                    <p className='text-center text-xl font-bold'>Our professionals will perform diagnostic tests, <br/>fluid flush and fills, engine replacement, oil changes, and total vehicle overhauls.</p>
-                </div>
+            <div className='container mx-auto flex flex-col justify-center items-center mt-4 mb-4'>
+                <h1 className='text-2xl font-extrabold'>Our Services</h1>
+                <p className='text-center text-xl font-bold'>Our professionals will perform diagnostic tests, <br />fluid flush and fills, engine replacement, oil changes, and total vehicle overhauls.</p>
+            </div>
             <div className='container mx-auto flex items-center justify-center gap-4'>
-              
+
                 <div className='flex flex-col items-center justify-center'>
                     <Image src='https://static.vecteezy.com/system/resources/previews/012/574/823/non_2x/motorcycle-wheel-motorcycle-template-design-for-logo-badge-emblem-and-other-free-vector.jpg' alt='tire Image' width={200} height={40} />
                     <h1 className='text-2xl font-bold'>Tyre Repair's</h1>
@@ -102,6 +102,9 @@ const ServiceSection = () => {
                     </button>
                 </div>
 
+            </div>
+            <div className='flex justify-center items-center m-4'>
+            <button className='btn btn-primary font-bold text-lg'>Services Details</button>
             </div>
 
 
