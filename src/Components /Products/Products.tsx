@@ -43,7 +43,7 @@ const Products = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {displayedProducts.map((product) => (
-          <div className="card bg-base-100 w-96 shadow-sm" key={product.id}>
+          <div className="card bg-base-100 w-96 shadow-sm" key={product._id}>
             <figure className="px-10 pt-10">
               <img
                 src={product.imageURL}
@@ -65,7 +65,7 @@ const Products = () => {
                 starDimension="20px"
                 starSpacing="2px"
               />
-             <Link href={'product/id'}>
+             <Link href={`product/${product._id}`}>
              <div className="card-actions">
                 <button className="btn btn-primary">More Details</button>
               </div>

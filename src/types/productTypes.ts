@@ -1,7 +1,7 @@
 
 
 export interface BikeInfo {  
-    id: number;
+    _id: string;
     title: string;
     imageURL: string;
     price: number;
