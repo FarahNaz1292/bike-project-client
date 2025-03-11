@@ -51,7 +51,7 @@ const ShopServices = () => {
                 </div>
                 {
                     services?.map((service) =>
-                     <Link href={`/ourservice/${service._id}`}>
+                     <Link href={`/ourservices/${service._id}`}>
                         <div className='flex flex-1 justify-center container mx-auto m-4 items-center card bg-base-200 text-center shadow-md' data-aos="zoom-in" key={service._id}>
                             <div className="divider divider-primary"> <h1 className='text-2xl font-bold'>{service.name}</h1></div>
                             <div className='card-body'>
