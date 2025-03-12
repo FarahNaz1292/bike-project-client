@@ -10,6 +10,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from 'next/link'
 
+
 const SingleProductPage = () => {
   const { id } = useParams()
 
@@ -37,7 +38,8 @@ const SingleProductPage = () => {
   return (
     <>
       <ProductVideoSection />
-      <div className='text-center m-4'>
+<div>
+<div className='text-center m-4'>
         <h1 className='text-2xl font-extrabold'>Shop our Products</h1>
         <p className='text-xl font-bold'>Fuel your passion, embrace the ride—your dream bike awaits!</p>
       </div>
@@ -71,7 +73,8 @@ const SingleProductPage = () => {
       ) : (
         <p className="text-center text-gray-500">Loading product details...</p>
       )}
- 
+
+</div>
       
 
     </>

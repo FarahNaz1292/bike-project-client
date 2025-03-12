@@ -2,14 +2,39 @@
 
 import Image from 'next/image'
 import 'aos/dist/aos.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { BikeInfo } from '@/types/productTypes';
+import axios from 'axios';
 
 
 if (typeof window !== 'undefined') {
     require('aos');
 }
 const Navbar = () => {
+    const { id } = useParams()
+
+    const [singleProduct, setSingleProduct] = useState<BikeInfo | null>(null) // Use a single object
+
+    useEffect(() => {
+        const getSingleProduct = async () => {
+            if (!id) return // Ensure ID exists before making the request
+
+            try {
+                const response = await axios.get(`http://localhost:5001/products/${id}`)
+                console.log("Product ID from useParams:", id);
+
+                console.log("Fetched product:", response.data) // Debugging log
+
+                setSingleProduct(response.data.data)
+            } catch (error) {
+                console.error("Error fetching product:", error)
+            }
+        }
+
+        getSingleProduct()
+    }, [id])
     React.useEffect(() => {
         const AOS = require('aos');
         AOS.init({
@@ -59,41 +84,16 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                       <Link href={`/`} > <li className='font-bold text-xl gap-4'>Home</li></Link>
-                        <li>
-                            <details className="relative z-20">
-                                <summary className='font-bold text-xl  '>Shop</summary>
-                                <ul className="p-2">
-                                    <li><a className='text-nowrap'>Cruiser Bikes</a></li>
-                                    <li><a className='text-nowrap'>Road Bikes</a></li>
-                                    <li><a className='text-nowrap'>Mountain Bikes</a></li>
-                                    <li><a className='text-nowrap'>Hybrid Bikes</a></li>
-                                    <li><a className='text-nowrap'>Gravel Bikes</a></li>
-                                    <li><a className='text-nowrap'>Dirt Bikes</a></li>
-                                    <li><a className='text-nowrap'>Scooter</a></li>
-                                    <li><a className='text-nowrap'>Adventure Bikes</a></li>
-                                    <li><a className='text-nowrap'>Chopper Bikes</a></li>
-                                </ul>
+                    <ul className='flex justify-between gap-8'>
 
-                            </details>
-                        </li>
-                        <li>
-                            <details className="relative z-20">
-                                <summary className='font-bold text-xl'>Services</summary>
-                                <ul className="p-2 ">
-                                    <li><a className='text-nowrap'>Cleaning and Lubrication</a></li>
-                                    <li><a className='text-nowrap'>Chain Maintenance</a></li>
-                                    <li><a className='text-nowrap'>Tire Inflation and Valve Checks</a></li>
-                                    <li><a className='text-nowrap'>Brake Adjustments</a></li>
-                                </ul>
-
-                            </details>
-                        </li>
-                        <li><a className='font-bold text-xl'>Appointments</a></li>
-                        <li><a className='font-bold text-xl'>About Us</a></li>
-                        <li><a className='font-bold text-xl'>Contact Us</a></li>
+                        <Link href={`/`} > <li className='font-bold text-xl gap-4'>Home</li></Link>
+                        <Link href={`/ourservices`} > <li className='font-bold text-xl gap-4'>Services</li></Link>
+                        <Link href={`/appointments`} > <li className='font-bold text-xl gap-4'>Apointments</li></Link>
+                        <Link href={`/aboutus`} > <li className='font-bold text-xl gap-4'>About Us</li></Link>
+                        <Link href={`/contactus`} > <li className='font-bold text-xl gap-4'>Contact Us</li></Link>
                     </ul>
+
+
                 </div>
                 <div className="navbar-end">
                     <a className="btn">Sign Up</a>
