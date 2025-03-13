@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
     require('aos');
@@ -75,9 +76,10 @@ const HeroSection = () => {
                                 We provide top-notch service for imported and domestic motorbikes and bikes. From brake servicing and exhaust tuning to<br/>engine repairs and performance upgrades, we’ve got your ride covered!
                             </h2>
                             <div className='m-4'>
-                                <button className='bg-blue-600 btn-primary p-3 sm:p-4 rounded-md text-white'>
+                              <Link href={'/contactus'}>
+                              <button className='bg-blue-600 btn-primary p-3 sm:p-4 rounded-md text-white'>
                                     GET FREE QUOTES
-                                </button>
+                                </button></Link>
                             </div>
                         </div>
                     </div>

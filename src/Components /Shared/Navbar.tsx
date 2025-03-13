@@ -88,7 +88,7 @@ const Navbar = () => {
 
                         <Link href={`/`} > <li className='font-bold text-xl gap-4'>Home</li></Link>
                         <Link href={`/ourservices`} > <li className='font-bold text-xl gap-4'>Services</li></Link>
-                        <Link href={`/appointments`} > <li className='font-bold text-xl gap-4'>Apointments</li></Link>
+                        <Link href={`/appointments`} ><li className="font-bold text-xl gap-4"> Appointments</li></Link>
                         <Link href={`/aboutus`} > <li className='font-bold text-xl gap-4'>About Us</li></Link>
                         <Link href={`/contactus`} > <li className='font-bold text-xl gap-4'>Contact Us</li></Link>
                     </ul>
@@ -96,7 +96,9 @@ const Navbar = () => {
 
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Sign Up</a>
+                  <Link href={'/signin'}>
+                  <button className='btn btn-primary'> SignIn
+                    </button></Link>
                 </div>
             </div>
         </>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 const AboutUs = () => {
   return (
     <section className="w-full bg-gray-100 py-16 px-6 lg:px-20">
-      {/* Hero Section */}
+  
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-800">About Us</h1>
         <p className="text-lg text-gray-600 mt-3">
@@ -13,12 +13,12 @@ const AboutUs = () => {
         </p>
       </div>
 
-      {/* About Content */}
+    
       <div className="flex flex-col lg:flex-row items-center gap-10">
-        {/* Image */}
+
         <div className="lg:w-1/2">
           <Image
-            src="/images/bike-workshop.jpg"
+            src="https://www.nevisrange.co.uk/wp-content/uploads/2024/08/IMG_4373-scaled.jpg"
             alt="Bike Workshop"
             width={600}
             height={400}
@@ -26,7 +26,6 @@ const AboutUs = () => {
           />
         </div>
 
-        {/* Text Content */}
         <div className="lg:w-1/2">
           <h2 className="text-3xl font-semibold text-gray-800 mb-4">Who We Are</h2>
           <p className="text-gray-700 mb-4">
@@ -42,7 +41,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Our Services */}
+
       <div className="mt-16">
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">What We Offer</h2>
         <div className="grid md:grid-cols-3 gap-8">

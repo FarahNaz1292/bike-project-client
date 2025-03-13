@@ -1,10 +1,11 @@
 import React from 'react'
-import AboutUs from'@/Components /AboutUs/AboutUs'
+import AboutUs from '@/Components /AboutUs/AboutUs';
 
-const aboutUs = () => {
+
+const aboutus = () => {
   return (
-    <AboutUs/>
+  <AboutUs/>
   )
 }
 
-export default aboutUs
+export default aboutus
