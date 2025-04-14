@@ -36,14 +36,14 @@ const Products = () => {
 
   return (
     <>
-      <div className='flex flex-col items-center justify-center m-4'>
+      <div className='flex flex-col items-center justify-center m-12'>
         <h1 className='text-3xl font-extrabold mt-2'>Our Product Cataloge</h1>
         <h3 className='texl-2xl font-bold mt-2'>Explore the Bikes you might like</h3>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 mb-4 gap-7 container mx-auto">
         {displayedProducts.map((product) => (
-          <div className="card bg-base-100 w-96 shadow-sm" key={product._id}>
+          <div className="card  bg-[#F1F3F4] w-96 shadow-sm" key={product._id}>
             <figure className="px-10 pt-10">
               <img
                 src={product.imageURL}
@@ -74,7 +74,7 @@ const Products = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center m-10">
         <button
           onClick={handleShowAllClick}
           className="btn btn-primary"

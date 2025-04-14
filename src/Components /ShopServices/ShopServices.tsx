@@ -29,7 +29,7 @@ const ShopServices = () => {
     return (
         <>
             <div>
-                <div className='flex justify-center container mx-auto m-4' data-aos="fade-left">
+                <div className='flex justify-center container mx-auto m-12' data-aos="fade-left">
                     <div>
                         <Image src='https://static.vecteezy.com/system/resources/previews/012/574/823/non_2x/motorcycle-wheel-motorcycle-template-design-for-logo-badge-emblem-and-other-free-vector.jpg' alt='tire Image' width={200} height={40} />
                         <h1 className='text-2xl font-bold'>Tyre Repair's</h1>

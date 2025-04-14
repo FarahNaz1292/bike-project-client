@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
           className="w-full h-auto object-cover"
         />
       </div>
-      <div className="w-full sm:w-1/2 p-2 text-center mt-5">
+      <div className="w-full sm:w-1/2 p-2 text-center m-12">
         <h1 className="text-2xl font-bold m-2">Why Choose Us</h1>
         <p className="text-xl font-bold">Our commitment to you is to provide the latest, honest, friendly, and on-time products and services. Visit a locally owned and operated business that has been selling and serving the community since 1992.</p>
         <div id="progress-container" className="mt-4">

@@ -13,7 +13,7 @@ const ServiceSection = () => {
     return (
         <>
             <div className='container mx-auto flex flex-col justify-center items-center mt-4 mb-4'>
-                <h1 className='text-2xl font-extrabold'>Our Services</h1>
+                <h1 className='text-2xl font-extrabold m-12'>Our Services</h1>
                 <p className='text-center text-xl font-bold'>Our professionals will perform diagnostic tests, <br />fluid flush and fills, engine replacement, oil changes, and total vehicle overhauls.</p>
             </div>
             <div className='container mx-auto flex items-center justify-center gap-4'>
@@ -104,7 +104,7 @@ const ServiceSection = () => {
                 </div>
 
             </div>
-            <div className='flex justify-center items-center m-4'>
+            <div className='flex justify-center items-center m-10'>
          <Link href={'/ourservices'}>   <button className='btn btn-primary font-bold text-lg'>Services Details</button></Link>
             </div>
 

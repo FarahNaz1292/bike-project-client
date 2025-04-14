@@ -70,7 +70,7 @@ const AboutUs = () => {
       <div className="text-center mt-16">
         <h2 className="text-2xl font-bold text-gray-800">Visit Our Workshop Today!</h2>
         <p className="text-gray-600 mt-2">Let’s get your bike road-ready!</p>
-        <a href="/contact" className="mt-4 inline-block px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700">
+        <a href="/contactus" className="mt-4 inline-block px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700">
           Contact Us
         </a>
       </div>

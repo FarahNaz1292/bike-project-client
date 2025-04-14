@@ -1,13 +1,14 @@
 'use client';
 
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import ContactUsAnimation from "../../../public/contactUsAnimation.json";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const ContactUs = () => {
+  const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
   return (
-    <section className="w-full bg-gray-100 py-40 px-6 lg:px-20">
+    <section className="w-full bg-gray-100 py-40 px-6 lg:px-20" >
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between">
      
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
