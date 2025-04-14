@@ -1,6 +1,7 @@
 'use client'
 
 import { BikeInfo } from '@/types/productTypes'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import StarRatings from 'react-star-ratings'
@@ -13,7 +14,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5001/products')
+        const response = await fetch('https://y-beta-wheat-23.vercel.app/products')
         const data = await response.json()
         console.log(data);
         if (response.ok) {
@@ -45,7 +46,7 @@ const Products = () => {
         {displayedProducts.map((product) => (
           <div className="card  bg-[#F1F3F4] w-96 shadow-sm" key={product._id}>
             <figure className="px-10 pt-10">
-              <img
+              <Image
                 src={product.imageURL}
                 alt="Bike images"
                 className="rounded-xl w-[300] h-[250]" />

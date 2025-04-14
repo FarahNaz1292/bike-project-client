@@ -1,26 +1,24 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'aos/dist/aos.css';
-import Link from 'next/link';
 
-if (typeof window !== 'undefined') {
-    require('aos');
-}
+// if (typeof window !== 'undefined') {
+//     require('aos');
+// }
 
 const HeroSection = () => {
-    React.useEffect(() => {
-        const AOS = require('aos');
-        AOS.init({
-            duration: 1200,
+    useEffect(() => {
+        import('aos').then((AOS) => {
+            AOS.init({ duration: 1200 });
         });
-    })
+    }, []);
 
     return (
         <>

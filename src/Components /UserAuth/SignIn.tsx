@@ -1,23 +1,38 @@
 'use client'
 
-
 import axios from "axios";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
 import login from '../../../public/login.json'
 import toast from "react-hot-toast";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-
+import { useEffect, Suspense } from "react";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
+// Separate component for handling the redirect logic with useSearchParams
+function RedirectHandler() {
+  const searchParams = useSearchParams();
+  
+  useEffect(() => {
+    const redirectReason = searchParams.get("redirect");
+    if (redirectReason === "loginToAddToCart") {
+      toast("Please log in to add items to your cart.", {
+        icon: "🛒",
+        duration: 5000,
+      });
+    }
+  }, [searchParams]);
+  
+  return null; // This component doesn't render anything
+}
+
 const SignIn = () => {
-  const router = useRouter()
-  const handleSubmit = async (e: any) => {
+  const router = useRouter();
+  
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     const email = form.email.value;
     const password = form.password.value;
     const user = {
@@ -27,7 +42,7 @@ const SignIn = () => {
     console.log(user);
 
     await axios
-      .post("http://localhost:5001/signin", user, {
+      .post("https://y-beta-wheat-23.vercel.app/signin", user, {
         withCredentials: true,
       })
       .then((res) => {
@@ -36,26 +51,18 @@ const SignIn = () => {
         toast.success("You have logged in successfully");
         router.push('/')
       });
-
   };
-  const searchParams = useSearchParams();
-
-useEffect(() => {
-  const redirectReason = searchParams.get("redirect");
-  if (redirectReason === "loginToAddToCart") {
-    toast("Please log in to add items to your cart.", {
-      icon: "🛒",
-      duration: 5000,
-    });
-  }
-}, []);
 
   return (
     <>
-      <div className="hero  min-h-screen  bg-gray-100">
+      <div className="hero min-h-screen bg-gray-100">
+        {/* Wrap the component using useSearchParams in Suspense */}
+        <Suspense fallback={null}>
+          <RedirectHandler />
+        </Suspense>
 
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className=" w-[50%]">
+          <div className="w-[50%]">
             <Lottie
               animationData={login}
               loop={true}
@@ -64,7 +71,7 @@ useEffect(() => {
             />
           </div>
 
-          <div className="card  bg-gray-100 lg:w-[50%]  shrink-0 shadow-2xl">
+          <div className="card bg-gray-100 lg:w-[50%] shrink-0 shadow-2xl">
             <form className="card-body" onSubmit={handleSubmit}>
               <div className="form-control flex flex-col">
                 <label className="label font-bold text-lg m-2">
@@ -102,7 +109,6 @@ useEffect(() => {
                 <button className="btn btn-primary shadow-black" type="submit">
                   Login
                 </button>
-
               </div>
               <p className="text-center font-bold">
                 Dont have an account. Please{" "}

@@ -1,7 +1,6 @@
 'use client'
 
 import { ServicesType } from '@/types/serviceTypes'
-import { User } from '@/types/userTypes'
 import { getUser } from '@/utils/useAuth'
 import axios from 'axios'
 import Image from 'next/image'
@@ -35,7 +34,7 @@ const SingleShopServicePage = () => {
 
       try {
         setLoading(true)
-        const response = await axios.get(`http://localhost:5001/services/${id}`)
+        const response = await axios.get(`https://y-beta-wheat-23.vercel.app/services/${id}`)
         console.log("Product ID from useParams:", id)
         console.log("Fetched product:", response.data) // Debugging log
         setSingleService(response.data.data)
@@ -78,9 +77,9 @@ const SingleShopServicePage = () => {
     }
   }
 
-  const handleGoToCart = () => {
-    router.push('/cart')
-  }
+  // const handleGoToCart = () => {
+  //   router.push('/cart')
+  // }
 
   // If we're still checking authentication or loading data, show a loading indicator
   if (loading) {

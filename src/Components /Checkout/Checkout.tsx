@@ -16,12 +16,12 @@ import {
 } from 'lucide-react'
 
 // Types
-interface CartItem {
-    id: string | number
-    name: string
-    price: number
-    quantity: number
-}
+// interface CartItem {
+//     id: string | number
+//     name: string
+//     price: number
+//     quantity: number
+// }
 
 interface ShippingInfo {
     firstName: string
@@ -84,32 +84,33 @@ export const Checkout: React.FC = () => {
     }
 
     const handlePaymentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let { name, value } = e.target
+        const { name, value: originalValue } = e.target
+        let formattedValue = originalValue
 
         // Format card number
         if (name === 'cardNumber') {
-            value = value.replace(/\D/g, '')
-            if (value.length > 16) value = value.slice(0, 16)
+            formattedValue = originalValue.replace(/\D/g, '')
+            if (formattedValue.length > 16) formattedValue = formattedValue.slice(0, 16)
             // Add spaces for readability but don't store them
-            e.target.value = value.replace(/(\d{4})(?=\d)/g, '$1 ').trim()
+            e.target.value = formattedValue.replace(/(\d{4})(?=\d)/g, '$1 ').trim()
         }
 
         // Format expiry date
         if (name === 'expiryDate') {
-            value = value.replace(/\D/g, '')
-            if (value.length > 4) value = value.slice(0, 4)
-            if (value.length > 2) {
-                e.target.value = `${value.slice(0, 2)}/${value.slice(2)}`
+            formattedValue = formattedValue.replace(/\D/g, '')
+            if (formattedValue.length > 4) formattedValue = formattedValue.slice(0, 4)
+            if (formattedValue.length > 2) {
+                e.target.value = `${formattedValue.slice(0, 2)}/${formattedValue.slice(2)}`
             }
         }
 
         // Format CVV
         if (name === 'cvv') {
-            value = value.replace(/\D/g, '')
-            if (value.length > 3) value = value.slice(0, 3)
+            formattedValue= formattedValue.replace(/\D/g, '')
+            if (formattedValue.length > 3) formattedValue = formattedValue.slice(0, 3)
         }
 
-        setPaymentInfo(prev => ({ ...prev, [name]: value }))
+        setPaymentInfo(prev => ({ ...prev, [name]: formattedValue }))
     }
 
     // Handle step navigation

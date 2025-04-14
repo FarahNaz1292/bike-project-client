@@ -30,7 +30,7 @@ const SingleProductPage = () => {
       if (!id) return // Ensure ID exists before making the request
 
       try {
-        const response = await axios.get(`http://localhost:5001/products/${id}`)
+        const response = await axios.get(`https://y-beta-wheat-23.vercel.app/products/${id}`)
         console.log("Product ID from useParams:", id);
         console.log("Fetched product:", response.data) // Debugging log
         setSingleProduct(response.data.data)

@@ -20,7 +20,7 @@ const ServiceSection = () => {
 
                 <div className='flex flex-col items-center justify-center'>
                     <Image src='https://static.vecteezy.com/system/resources/previews/012/574/823/non_2x/motorcycle-wheel-motorcycle-template-design-for-logo-badge-emblem-and-other-free-vector.jpg' alt='tire Image' width={200} height={40} />
-                    <h1 className='text-2xl font-bold'>Tyre Repair's</h1>
+                    <h1 className='text-2xl font-bold'>Tyre Repair&apos;s</h1>
                     <p className={`transition-all duration-500 ${isExpanded ? 'line-clamp-none' : 'line-clamp-3'}`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, blanditiis accusantium. Atque quo harum repellendus vitae non nesciunt omnis quisquam nostrum veniam molestias, vel qui quas quis recusandae dolorem dicta.
                         Blanditiis distinctio asperiores voluptatum eaque earum repellendus! Saepe, repellat? Aut sint suscipit atque quas minus eum explicabo totam laudantium. Ullam neque inventore minima officiis consectetur laboriosam rem dolorum doloremque tempore!
@@ -41,7 +41,7 @@ const ServiceSection = () => {
                 </div>
                 <div className='flex flex-col items-center justify-center'>
                     <Image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVOIBDgtkFygnvYrP1l6z_D-GK-t9_1ydUw&s' alt='tire Image' width={200} height={40} />
-                    <h1 className='text-2xl font-bold'>Chain Repair's</h1>
+                    <h1 className='text-2xl font-bold'>Chain Repair&apos;s</h1>
                     <p className={`transition-all duration-500 ${isExpanded ? 'line-clamp-none' : 'line-clamp-3'}`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, blanditiis accusantium. Atque quo harum repellendus vitae non nesciunt omnis quisquam nostrum veniam molestias, vel qui quas quis recusandae dolorem dicta.
                         Blanditiis distinctio asperiores voluptatum eaque earum repellendus! Saepe, repellat? Aut sint suscipit atque quas minus eum explicabo totam laudantium. Ullam neque inventore minima officiis consectetur laboriosam rem dolorum doloremque tempore!
@@ -62,7 +62,7 @@ const ServiceSection = () => {
                 </div>
                 <div className='flex flex-col items-center justify-center'>
                     <Image src='https://static.vecteezy.com/system/resources/previews/011/913/499/non_2x/chrome-vintage-motorcycle-engine-logo-with-angel-wings-free-vector.jpg' alt='motor bike engine Image' width={250} height={40} />
-                    <h1 className='text-2xl font-bold'>Motor Bike Repair's</h1>
+                    <h1 className='text-2xl font-bold'>Motor Bike Repair&apos;s</h1>
                     <p className={`transition-all duration-500 ${isExpanded ? 'line-clamp-none' : 'line-clamp-3'}`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, blanditiis accusantium. Atque quo harum repellendus vitae non nesciunt omnis quisquam nostrum veniam molestias, vel qui quas quis recusandae dolorem dicta.
                         Blanditiis distinctio asperiores voluptatum eaque earum repellendus! Saepe, repellat? Aut sint suscipit atque quas minus eum explicabo totam laudantium. Ullam neque inventore minima officiis consectetur laboriosam rem dolorum doloremque tempore!
@@ -83,7 +83,7 @@ const ServiceSection = () => {
                 </div>
                 <div className='flex flex-col items-center justify-center'>
                     <Image src='https://static.vecteezy.com/system/resources/previews/049/641/352/non_2x/black-car-brake-disc-isolated-on-white-eps-illustration-free-vector.jpg' alt='tire Image' width={200} height={40} />
-                    <h1 className='text-2xl font-bold'>Brake Repair's</h1>
+                    <h1 className='text-2xl font-bold'>Brake Repair&apos;s</h1>
                     <p className={`transition-all duration-500 ${isExpanded ? 'line-clamp-none' : 'line-clamp-3'}`}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, blanditiis accusantium. Atque quo harum repellendus vitae non nesciunt omnis quisquam nostrum veniam molestias, vel qui quas quis recusandae dolorem dicta.
                         Blanditiis distinctio asperiores voluptatum eaque earum repellendus! Saepe, repellat? Aut sint suscipit atque quas minus eum explicabo totam laudantium. Ullam neque inventore minima officiis consectetur laboriosam rem dolorum doloremque tempore!

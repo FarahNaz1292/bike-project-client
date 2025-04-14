@@ -4,41 +4,37 @@ import Image from 'next/image'
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 import { CartButton } from './Cart';
 import { User } from '@/types/userTypes';
 
 
 
-if (typeof window !== 'undefined') {
-    require('aos');
-}
+
+
 const Navbar = () => {
-    const { id } = useParams()
-    const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<User | null>(null);
 
-    useEffect(() => {
-     
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-          const userData = JSON.parse(storedUser);
-          setUser({
-            _id: userData._id,
-            name: userData.name || userData.email,
-            img: userData.img || 'https://placeholderimage.com/avatar.jpg',
-            email: userData.email,
-            password: userData.password,
-          });
-        }
-        
-}, []);
+  useEffect(() => {
+    // AOS Init
+    import('aos').then((AOS) => {
+      AOS.init({ duration: 1200 });
+    });
 
-    React.useEffect(() => {
-        const AOS = require('aos');
-        AOS.init({
-            duration: 1000,
-        });
-    })
+    // Load user from localStorage
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const userData = JSON.parse(storedUser);
+      setUser({
+        _id: userData._id,
+        name: userData.name || userData.email,
+        img: userData.img || 'https://placeholderimage.com/avatar.jpg',
+        email: userData.email,
+        password: userData.password,
+      });
+    }
+  }, []);
+
+
     return (
         <>
             <div className="navbar bg-base-100 shadow-sm">
@@ -99,10 +95,12 @@ const Navbar = () => {
   <div className="dropdown dropdown-end">
     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
       <div className="w-20 h-10 rounded-full">
-        <img
+        <Image
           src={user.img}
           alt="user avatar"
           className="rounded-full object-cover"
+          width={40}
+          height={40}
         />
       </div>
     </label>
