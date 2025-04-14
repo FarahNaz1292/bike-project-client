@@ -5,8 +5,9 @@ import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { BikeInfo } from '@/types/productTypes';
-import axios from 'axios';
+import { CartButton } from './Cart';
+import { User } from '@/types/userTypes';
+
 
 
 if (typeof window !== 'undefined') {
@@ -14,27 +15,24 @@ if (typeof window !== 'undefined') {
 }
 const Navbar = () => {
     const { id } = useParams()
-
-    const [singleProduct, setSingleProduct] = useState<BikeInfo | null>(null) // Use a single object
+    const [user, setUser] = useState<User | null>(null)
 
     useEffect(() => {
-        const getSingleProduct = async () => {
-            if (!id) return // Ensure ID exists before making the request
-
-            try {
-                const response = await axios.get(`http://localhost:5001/products/${id}`)
-                console.log("Product ID from useParams:", id);
-
-                console.log("Fetched product:", response.data) // Debugging log
-
-                setSingleProduct(response.data.data)
-            } catch (error) {
-                console.error("Error fetching product:", error)
-            }
+     
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+          const userData = JSON.parse(storedUser);
+          setUser({
+            _id: userData._id,
+            name: userData.name || userData.email,
+            img: userData.img || 'https://placeholderimage.com/avatar.jpg',
+            email: userData.email,
+            password: userData.password,
+          });
         }
+        
+}, []);
 
-        getSingleProduct()
-    }, [id])
     React.useEffect(() => {
         const AOS = require('aos');
         AOS.init({
@@ -95,10 +93,40 @@ const Navbar = () => {
 
 
                 </div>
-                <div className="navbar-end">
-                  <Link href={'/signin'}>
-                  <button className='btn btn-primary'> SignIn
-                    </button></Link>
+                <div className="navbar-end flex items-center gap-4">
+                    <CartButton />
+                    {user ? (
+  <div className="dropdown dropdown-end">
+    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+      <div className="w-20 h-10 rounded-full">
+        <img
+          src={user.img}
+          alt="user avatar"
+          className="rounded-full object-cover"
+        />
+      </div>
+    </label>
+    <ul
+      tabIndex={0}
+      className="mt-3 z-[50] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+    >
+      <li className="font-bold text-lg text-center">{user.name}</li>
+      <li>
+        <button
+          className="text-red-500"
+          onClick={() => setUser(null)} // Clear user data on logout
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+) : (
+  <Link href="/signin">
+    <button className="btn btn-primary">Sign In</button>
+  </Link>
+)}
+
                 </div>
             </div>
         </>

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components /Shared/Navbar";
 import Footer from "@/Components /Shared/Footer";
+import { CartProvider, CartDrawer } from "@/Components /Shared/Cart"; 
+import { Toaster } from "react-hot-toast";
 
 
 const geistSans = Geist({
@@ -28,13 +30,17 @@ export default function RootLayout({
   return (
     <>
 
-<Navbar />
-<html lang="en">
-  <body>
-    {children}
-  </body>
-</html>
-<Footer />
+<CartProvider>
+      <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+        <body>
+          <Navbar />
+          <Toaster />
+          {children}
+          <CartDrawer />
+          <Footer />
+        </body>
+      </html>
+    </CartProvider>
 
 
     </>

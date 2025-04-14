@@ -2,15 +2,20 @@
 
 
 import axios from "axios";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { toast } from "react-toast";
-import login from '../../../public/login.json'
 
+import login from '../../../public/login.json'
+import toast from "react-hot-toast";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const SignIn = () => {
- 
-  const handleSubmit = async (e:any) => {
+  const router = useRouter()
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
@@ -19,21 +24,36 @@ const SignIn = () => {
       email,
       password,
     };
+    console.log(user);
+
     await axios
       .post("http://localhost:5001/signin", user, {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res);
+        console.log(res.data.data);
+        localStorage.setItem("user", JSON.stringify(res.data.data));
         toast.success("You have logged in successfully");
-       
+        router.push('/')
       });
+
   };
+  const searchParams = useSearchParams();
+
+useEffect(() => {
+  const redirectReason = searchParams.get("redirect");
+  if (redirectReason === "loginToAddToCart") {
+    toast("Please log in to add items to your cart.", {
+      icon: "🛒",
+      duration: 5000,
+    });
+  }
+}, []);
 
   return (
     <>
       <div className="hero  min-h-screen  bg-gray-100">
-  
+
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className=" w-[50%]">
             <Lottie
@@ -43,12 +63,12 @@ const SignIn = () => {
               height={500}
             />
           </div>
-         
+
           <div className="card  bg-gray-100 lg:w-[50%]  shrink-0 shadow-2xl">
             <form className="card-body" onSubmit={handleSubmit}>
               <div className="form-control flex flex-col">
                 <label className="label font-bold text-lg m-2">
-                Email
+                  Email
                 </label>
                 <input
                   name="email"
@@ -60,7 +80,7 @@ const SignIn = () => {
               </div>
               <div className="form-control flex flex-col">
                 <label className="label font-bold text-lg m-2">
-                 Password
+                  Password
                 </label>
                 <input
                   type="password"
@@ -79,12 +99,10 @@ const SignIn = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button
-                  className="btn btn-primary  shadow-black"
-                  type="submit"
-                >
+                <button className="btn btn-primary shadow-black" type="submit">
                   Login
                 </button>
+
               </div>
               <p className="text-center font-bold">
                 Dont have an account. Please{" "}

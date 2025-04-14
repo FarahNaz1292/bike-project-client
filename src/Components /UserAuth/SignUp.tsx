@@ -107,12 +107,14 @@ const router= useRouter
               </div>
 
               <div className="form-control mt-6">
+                <Link href={"/"}>
                 <button
                   className="btn btn-primary shadow-black"
                   type="submit"
                 >
                   SignUp
                 </button>
+                </Link>
               </div>
               <p className="text-center">
                 Already have an account? Please{" "}

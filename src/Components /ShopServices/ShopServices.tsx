@@ -56,7 +56,7 @@ const ShopServices = () => {
                             <div className="divider divider-primary"> <h1 className='text-2xl font-bold'>{service.name}</h1></div>
                             <div className='card-body'>
 
-                                <p className='text-xl font-medium'>Price/hr: {service.price}</p>
+                                <p className='text-xl font-medium'>Price/hr: ${service.price}</p>
                                 <p className='text-lg font-bold'>{service.description}</p>
                                 <p className='text-lg font-medium font-mono'>Estimated Time: {service.estimatedTime}</p>
                             </div>
